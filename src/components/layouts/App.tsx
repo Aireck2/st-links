@@ -1,18 +1,29 @@
 "use client";
-import { FC } from "react";
+import { Children, FC } from "react";
 import styled from "styled-components";
 
+import { GlobalStyles } from "@/themes/GlobalStyles";
+
 interface AppProps {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
 const AppStyled = styled.main`
   height: 100vh;
+  height: 100%;
   width: 100vw;
-  background-color: #666;
-  padding: 4rem;
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
 `;
 
 export const App: FC<AppProps> = ({ children }) => {
-  return <AppStyled>{children}</AppStyled>;
+  const childrenLength = Children.toArray(children).length;
+
+  return (
+    <AppStyled>
+      <GlobalStyles />
+      {childrenLength > 1 ? <>{children}</> : children}
+    </AppStyled>
+  );
 };

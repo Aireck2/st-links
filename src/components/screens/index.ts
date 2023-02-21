@@ -1,1 +1,2 @@
-import React from "react";
+export * from "./Heading";
+export * from "./SpotifyStatus";
