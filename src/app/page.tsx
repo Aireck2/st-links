@@ -1,19 +1,22 @@
-import { Inter } from "@next/font/google";
+"use client";
+import useSWR from "swr";
 
 import { App } from "@/components/layouts/App";
-import { Heading } from "@/components/screens/Heading";
-
-const inter = Inter({ subsets: ["latin"] });
+import { ThemeProvider } from "@/context/ThemeProvider";
+import { Switch } from "@/components/basics";
+import { SpotifyStatus, Heading } from "@/components/screens";
 
 export default function Home() {
+  const fetcher = (url: string) => fetch(url).then((r) => r.json());
+  const { data } = useSWR("/api/spotify", fetcher);
+
   return (
-    <App>
-      <>
-        <Heading></Heading>
-        <div>
-          <h2 className={inter.className}>Hola</h2>
-        </div>
-      </>
-    </App>
+    <ThemeProvider>
+      <App>
+        <Heading />
+        <Switch />
+        {!data ? <></> : <SpotifyStatus data={data} />}
+      </App>
+    </ThemeProvider>
   );
 }
