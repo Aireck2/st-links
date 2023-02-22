@@ -12,7 +12,7 @@ const AppStyled = styled.main`
   height: 100vh;
   height: 100%;
   width: 100vw;
-  max-width: 700px;
+  max-width: 680px;
   margin: auto;
   padding: 2rem;
 `;
