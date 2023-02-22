@@ -1,9 +1,11 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { FC } from "react";
 import Image from "next/image";
+
 import styled from "styled-components";
+
+import { AdaptSpotifyData } from "@/types/api/spotify";
 
 const common = `
   border-radius: 1rem;
@@ -64,14 +66,9 @@ const HeadingStyled = styled.section`
       font-size: 16px;
       font-weight: normal;
       font-size: clamp(0.8rem, 2vw, 1rem);
-      /* display: none;
-      @media screen and (min-width: 480px) {
-        display: block;
-      } */
     }
     .song-title {
       color: white;
-      /* font-size: 24px; */
       font-size: clamp(0.9rem, 3.5vw, 1.4rem);
       font-weight: normal;
     }
@@ -111,19 +108,13 @@ const NotPlayingStyled = styled.section`
   }
 `;
 
-interface SpotifyData {
-  album: string;
-  albumImageUrl: string;
-  artist: string;
-  isPlaying: boolean;
-  songUrl: string;
-  title: string;
-}
 interface SpotifyStatusProps {
-  data: SpotifyData;
+  data: AdaptSpotifyData;
 }
 
 export const SpotifyStatus: FC<SpotifyStatusProps> = ({ data }) => {
+  const caption = "I'm coding & vibing with this song!";
+
   return data.isPlaying ? (
     <HeadingStyled>
       <Image
@@ -143,10 +134,10 @@ export const SpotifyStatus: FC<SpotifyStatusProps> = ({ data }) => {
           width={100}
         />
         <div className="content">
-          <h3 className="album-title">I'm coding & vibing with this song!</h3>
+          <h3 className="album-title">{caption}</h3>
           <h2 className="song-title">{data.title}</h2>
           <h4 className="artist-title">
-            {data.artist} — {data.album}
+            {data.artists} — {data.album}
           </h4>
         </div>
       </div>
@@ -163,7 +154,7 @@ export const SpotifyStatus: FC<SpotifyStatusProps> = ({ data }) => {
       </div>
       <div className="content">
         <p>Not playing right now...</p>
-        <p>I bet I'm studying or sleeping</p>
+        <p>I bet I&#39;m studying or sleeping</p>
       </div>
     </NotPlayingStyled>
   );
