@@ -1,6 +1,13 @@
 import querystring from "querystring";
-import { clientId, clientSecret, refreshToken } from "@/config/app";
 import { NextApiResponse } from "next";
+
+import { SpotifyResponse } from "@/types/api/spotify";
+
+import { adaptSpotifyCurrentSong } from "@/adapters";
+
+import config from "@/config/app";
+
+const { clientId, clientSecret, refreshToken } = config.spotify;
 
 const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
 
@@ -33,56 +40,16 @@ export const getNowPlaying = async () => {
   });
 };
 
-interface Data {
-  album: string;
-  albumImageUrl: string;
-  artist: string;
-  isPlaying: boolean;
-  songUrl: string;
-  title: string;
-  duration: string;
-  progress: string;
-}
-
-const getSpotify = async (
-  _: any,
-  res: NextApiResponse<Data | { isPlaying: Data["isPlaying"] }>
-) => {
+const getSpotify = async (_: any, res: NextApiResponse<SpotifyResponse>) => {
   const response = await getNowPlaying();
 
   if (response.status === 204 || response.status > 400) {
     return res.status(200).json({ isPlaying: false });
   }
 
-  const toMinSec = (ms: number) => {
-    const min = Math.floor((ms / 1000 / 60) << 0);
-    const sec = Math.floor((ms / 1000) % 60);
-
-    return `${min}:${sec}`;
-  };
-
   const song = await response.json();
-  const isPlaying = song.is_playing;
-  const title = song.item.name;
-  const artist = song.item.artists
-    .map((_artist: any) => _artist.name)
-    .join(", ");
-  const album = song.item.album.name;
-  const albumImageUrl = song.item.album.images[0].url;
-  const songUrl = song.item.external_urls.spotify;
-  const duration = toMinSec(song.item.duration_ms);
-  const progress = toMinSec(song.progress_ms);
 
-  return res.status(200).json({
-    album,
-    albumImageUrl,
-    artist,
-    isPlaying,
-    songUrl,
-    title,
-    duration,
-    progress,
-  });
+  return res.status(200).json(adaptSpotifyCurrentSong(song));
 };
 
 export default getSpotify;
