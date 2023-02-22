@@ -2,43 +2,70 @@
 
 import { FC } from "react";
 import Image from "next/image";
-import styled, { useTheme } from "styled-components";
+import useSWR from "swr";
+import styled from "styled-components";
 
-import { constants } from "@/utils/constants";
+import { AdaptGithubData } from "@/types/api/github";
+
+import { constants } from "@/config/constants";
 
 const HeadingStyled = styled.section`
   display: flex;
   align-items: center;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   flex-direction: column;
   .brand {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
     font-weight: bold;
+    font-style: italic;
     color: ${({ theme }) => theme.colors.light};
   }
   .social {
+    margin-top: 20px;
     display: flex;
-    grid-gap: 1rem;
+    grid-gap: 20px;
     min-width: 200px;
-    justify-content: space-between;
-    svg {
-      color: white;
+    justify-content: center;
+    & a:hover {
+      transform: scale(1.075);
     }
   }
 `;
 
-const AvatarStyled = styled.div`
+const AvatarStyled = styled(Image)`
   width: 120px;
   height: 120px;
-  background-color: ${({ theme }) => theme.colors.light};
-  border-radius: 2rem;
+  border-radius: 50%;
+  object-fit: fill;
+  object-position: center;
 `;
 
 export const Heading: FC = () => {
-  const theme = useTheme();
+  const fetcher = (url: string) => fetch(url).then((r) => r.json());
+  const { data } = useSWR<Partial<AdaptGithubData>>("/api/github", fetcher);
   return (
     <HeadingStyled>
-      <AvatarStyled />
-      <p className="brand">@erickescribaa</p>
+      {data?.avatarUrl ? (
+        <AvatarStyled
+          priority
+          src={data.avatarUrl}
+          alt="Profile picture"
+          height={120}
+          width={120}
+        />
+      ) : null}
+      <div className="brand">
+        <p className="brand">@erickescribaa</p>
+
+        <Image
+          src={constants.images.verified.src}
+          alt="verified icon"
+          height={16}
+          width={16}
+        />
+      </div>
       <div className="social">
         {constants.social.map((sm) => (
           <a href={sm.url} key={sm.name}>
