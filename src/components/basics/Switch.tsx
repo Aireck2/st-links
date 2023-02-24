@@ -2,25 +2,35 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 import { useThemeContext } from "@/context/ThemeProvider";
+import Sun from "./Sun";
+import Moon from "./Moon";
 
 export const ButtonStyled = styled.button`
   all: unset;
-  /* color: ${({ theme }) => theme.colors.textColor}; */
   stroke: ${({ theme }) => theme.colors.textColor};
   cursor: pointer;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  & svg:hover {
+    transform: scale(1.075);
+  }
 `;
 
 export const Switch: FC = () => {
   const ctx = useThemeContext();
-  const src = ctx?.isDarkTheme ? "/icons/sun.svg" : "/icons/moon.svg";
-  const alt = ctx?.isDarkTheme ? "sun icon" : "moon icon";
+  const theme: any = useTheme();
 
-  return (
-    <ButtonStyled onClick={ctx?.toggleTheme}>
-      <Image src={src} alt={alt} height={24} width={24} />
-    </ButtonStyled>
+  const icon = ctx?.isDarkTheme ? (
+    <Sun color={theme.colors.textColor} width={20} />
+  ) : (
+    <Moon color={theme.colors.textColor} width={20} />
   );
+
+  return <ButtonStyled onClick={ctx?.toggleTheme}>{icon}</ButtonStyled>;
 };
