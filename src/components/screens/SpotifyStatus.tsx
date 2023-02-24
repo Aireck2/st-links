@@ -123,6 +123,9 @@ export const SpotifyStatus: FC<SpotifyStatusProps> = ({ data }) => {
         src={data.albumImageUrl}
         alt={`props.album`}
         fill
+        sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
       />
       <div className="container">
         <Image
@@ -150,7 +153,7 @@ export const SpotifyStatus: FC<SpotifyStatusProps> = ({ data }) => {
           alt={"Spotify icon"}
           width={50}
           height={50}
-        ></Image>
+        />
       </div>
       <div className="content">
         <p>Not playing right now...</p>

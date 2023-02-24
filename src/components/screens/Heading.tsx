@@ -14,6 +14,7 @@ const HeadingStyled = styled.section`
   align-items: center;
   grid-gap: 1rem;
   flex-direction: column;
+  margin-bottom: 20px;
   .brand {
     display: flex;
     align-items: center;
