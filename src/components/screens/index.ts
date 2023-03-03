@@ -1,2 +1,2 @@
-export * from "./Heading";
-export * from "./SpotifyStatus";
+export * from "./Heading/Heading";
+export * from "./SpotifyPlayer";
