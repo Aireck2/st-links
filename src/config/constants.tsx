@@ -1,18 +1,23 @@
+import Github from "@/components/basics/Github";
+import Linkedin from "@/components/basics/Linkedin";
+import Mail from "@/components/basics/Mail";
+
 export const constants = {
-  social: [
+  verified: "@erickescribaa",
+  socialLinks: [
     {
       name: "github",
-      src: "/icons/github.svg",
+      icon: Github,
       url: "https://github.com/aireck2",
     },
     {
       name: "linkedin",
-      src: "/icons/linkedin.svg",
+      icon: Linkedin,
       url: "https://www.linkedin.com/in/erickescriba/",
     },
     {
       name: "gmail",
-      src: "/icons/mail.svg",
+      icon: Mail,
       url: "mailto:erickescribaa@gmail.com",
     },
   ],
