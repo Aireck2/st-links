@@ -1,3 +1,4 @@
+"use client";
 import useSWR from "swr";
 
 import { AdaptSpotifyData } from "@/types/api/spotify";
