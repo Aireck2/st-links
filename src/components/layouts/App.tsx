@@ -1,11 +1,10 @@
-"use client";
-import { Children, FC } from "react";
+import { Children, FC, ReactNode } from "react";
 import styled from "styled-components";
 
 import { GlobalStyles } from "@/themes/GlobalStyles";
 
 interface AppProps {
-  children: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[] | ReactNode;
 }
 
 const AppStyled = styled.main`
