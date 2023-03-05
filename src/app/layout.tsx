@@ -1,3 +1,6 @@
+"use client";
+import { App } from "@/components/layouts";
+import { ThemeProvider } from "@/context/ThemeProvider";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,12 +10,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>
+          <App>{children}</App>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
