@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import NotPlaying from "./NotPlaying";
 import { useGetSpotify } from "@/hooks/useGetSpotify";
+import NotPlaying from "./NotPlaying";
 
 import { PlayerStyled } from "./styled/SpotifyPlayer";
 
