@@ -10,12 +10,15 @@ const VerifiedStyled = styled.section`
   font-weight: bold;
   font-style: italic;
   color: ${({ theme }) => theme.colors.light};
+  .title {
+    font-size: 20px;
+  }
 `;
 
 const VerifiedName = () => {
   return (
     <VerifiedStyled>
-      <p>{constants.verified}</p>
+      <h2 className="title">{constants.verified}</h2>
 
       <Image
         src={constants.images.verified.src}
