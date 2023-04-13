@@ -1,6 +1,6 @@
 import { useGetGithub } from "@/hooks/useGetGithub";
 
-import { AvatarStyled } from "./styles";
+import { AvatarStyled, NotImage } from "./styles";
 
 const Avatar = () => {
   const { data } = useGetGithub();
@@ -14,7 +14,9 @@ const Avatar = () => {
           height={120}
           width={120}
         />
-      ) : null}
+      ) : (
+        <NotImage />
+      )}
     </>
   );
 };
