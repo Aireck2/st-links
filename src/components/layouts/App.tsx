@@ -11,9 +11,8 @@ const AppStyled = styled.main`
   height: 100vh;
   height: 100%;
   width: 100vw;
-  max-width: 680px;
+  max-width: 480px;
   margin: auto;
-  padding: 2rem;
 `;
 
 export const App: FC<AppProps> = ({ children }) => {
