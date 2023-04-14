@@ -63,6 +63,10 @@ interface Image {
 interface ExternalIDS {
   isrc: string;
 }
+export interface SpotifyProgress {
+  raw: number;
+  format: string;
+}
 
 export type AdaptSpotifyData = {
   isPlaying: boolean;
@@ -71,8 +75,8 @@ export type AdaptSpotifyData = {
   album: string;
   albumImageUrl: string;
   songUrl: string;
-  duration: string;
-  progress: string;
+  duration: SpotifyProgress;
+  progress: SpotifyProgress;
 };
 
 export type SpotifyResponse = AdaptSpotifyData | { isPlaying: boolean };
