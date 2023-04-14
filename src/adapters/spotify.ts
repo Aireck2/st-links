@@ -11,7 +11,13 @@ export const adaptSpotifyCurrentSong = (
     album: song?.item?.album.name,
     albumImageUrl: song.item?.album.images[0].url,
     songUrl: song.item?.external_urls.spotify,
-    duration: toMinSec(song.item?.duration_ms ?? 0),
-    progress: toMinSec(song.progress_ms ?? 0),
+    duration: {
+      raw: song.item?.duration_ms,
+      format: toMinSec(song.item?.duration_ms ?? 0),
+    },
+    progress: {
+      raw: song.progress_ms,
+      format: toMinSec(song.progress_ms ?? 0),
+    },
   };
 };
