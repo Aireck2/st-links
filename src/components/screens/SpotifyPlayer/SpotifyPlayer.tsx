@@ -5,11 +5,21 @@ import { useGetSpotify } from "@/hooks/useGetSpotify";
 import NotPlaying from "./NotPlaying";
 
 import { PlayerStyled } from "./styled/SpotifyPlayer";
+import PlayingProgress from "./PlayingProgress";
 
 const SpotifyPlayer: FC = () => {
   const { data } = useGetSpotify();
 
   const caption = "I'm coding & vibing with this song!";
+
+  const handleMouseLeave = (e: any) =>
+    e.currentTarget.classList.add("mouseleave");
+
+  const handleMouseEnter = (e: any) => {
+    const target = e.currentTarget;
+    const exist = target.className.split(" ").includes("mouseleave");
+    if (exist) target.classList.remove("mouseleave");
+  };
 
   return data?.isPlaying ? (
     <PlayerStyled>
@@ -34,10 +44,21 @@ const SpotifyPlayer: FC = () => {
         />
         <div className="content">
           <h3 className="album-title">{caption}</h3>
-          <h2 className="song-title">{data.title}</h2>
-          <h4 className="artist-title">
+          <h2
+            className="song-title"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            {data.title}
+          </h2>
+          <h4
+            className="artist-title"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             {data.artists} — {data.album}
           </h4>
+          <PlayingProgress duration={data.duration} progress={data.progress} />
         </div>
       </div>
     </PlayerStyled>

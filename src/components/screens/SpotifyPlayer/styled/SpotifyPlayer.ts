@@ -38,6 +38,7 @@ export const PlayerStyled = styled.section`
   }
 
   .container {
+    overflow-x: hidden;
     width: 100%;
     height: 100%;
     backdrop-filter: blur(1rem);
@@ -50,15 +51,23 @@ export const PlayerStyled = styled.section`
     display: flex;
     align-items: center;
     grid-gap: 20px;
-    @media screen and (min-width: ${minWidth}) {
-      width: max-content;
-    }
+    padding-right: ${borderRadius};
 
     .content {
       width: 100%;
       min-width: 100px;
       align-self: center;
-      padding-right: ${borderRadius};
+      overflow: hidden;
+    }
+    .song-title,
+    .artist-title {
+      width: 100%;
+      white-space: nowrap;
+      &.mouseleave {
+        animation-name: progressBar;
+        animation-iteration-count: 1;
+        animation-duration: 5s;
+      }
     }
 
     .album-title {
@@ -70,7 +79,7 @@ export const PlayerStyled = styled.section`
 
     .song-title {
       color: white;
-      font-size: clamp(0.9rem, 3vw, 1.2rem);
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
       font-weight: normal;
     }
 
@@ -78,6 +87,26 @@ export const PlayerStyled = styled.section`
       color: #ccc;
       font-weight: normal;
       font-size: clamp(0.8rem, 2vw, 0.85rem);
+    }
+  }
+
+  @keyframes progressBar {
+    0% {
+      transform: translateX(-0%);
+    }
+
+    50% {
+      transform: translateX(-30%);
+    }
+    100% {
+      transform: translateX(-0%);
+    }
+  }
+  @media screen and (min-width: ${minWidth}) {
+    @keyframes progressBar {
+      50% {
+        transform: translateX(-20%);
+      }
     }
   }
 `;
