@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotPlaying display correct styles 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 .icon {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background-color: #212121;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.c0 .content {
+  padding: 1rem;
+  background-color: #121212;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 .content p {
+  color: #b3b3b3;
+  font-size: clamp(0.8rem,3vw,1rem);
+}
+
+<section
+  class="c0"
+>
+  <div
+    class="icon"
+  >
+    <img
+      alt="Spotify icon"
+      data-nimg="1"
+      decoding="async"
+      height="50"
+      loading="lazy"
+      src="/icons/spotify.svg"
+      style="color: transparent;"
+      width="50"
+    />
+  </div>
+  <div
+    class="content"
+  >
+    <p>
+      Not playing right now...
+    </p>
+    <p>
+      I bet I'm studying or sleeping
+    </p>
+  </div>
+</section>
+`;
