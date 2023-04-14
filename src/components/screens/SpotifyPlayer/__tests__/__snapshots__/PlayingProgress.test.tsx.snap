@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayingProgress display correct styles 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.c0 span {
+  font-size: 11px;
+  color: rgb(156 163 175);
+}
+
+.c0 progress {
+  all: unset;
+  border-radius: 8px;
+  width: 100%;
+  height: 2px;
+}
+
+.c0 progress[value]::-webkit-progress-value {
+  background: #aaa;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <span>
+      1:00
+    </span>
+    <progress
+      id="file"
+      max="12000"
+      value="6000"
+    />
+    <span>
+      2:00
+    </span>
+  </div>
+</div>
+`;
+
+exports[`PlayingProgress render progress/duration text 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.c0 span {
+  font-size: 11px;
+  color: rgb(156 163 175);
+}
+
+.c0 progress {
+  all: unset;
+  border-radius: 8px;
+  width: 100%;
+  height: 2px;
+}
+
+.c0 progress[value]::-webkit-progress-value {
+  background: #aaa;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <span>
+      1:00
+    </span>
+    <progress
+      id="file"
+      max="12000"
+      value="6000"
+    />
+    <span>
+      2:00
+    </span>
+  </div>
+</div>
+`;
