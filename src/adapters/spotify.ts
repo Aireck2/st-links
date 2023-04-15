@@ -5,6 +5,7 @@ export const adaptSpotifyCurrentSong = (
   song: SpotifyData
 ): AdaptSpotifyData => {
   return {
+    playingType: song.currently_playing_type,
     isPlaying: song.is_playing,
     title: song.item?.name,
     artists: song.item?.artists?.map((artist: any) => artist.name).join(", "),
