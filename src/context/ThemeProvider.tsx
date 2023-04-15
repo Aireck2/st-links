@@ -31,12 +31,6 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
-  useEffect(() => {
-    if (window !== undefined) {
-      const isDark = window?.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(isDark ? "dark" : "light");
-    }
-  }, []);
   return (
     <ThContext.Provider value={{ theme, toggleTheme, setTheme, isDarkTheme }}>
       <ThemeProviderStyled theme={isDarkTheme ? darkTheme : lightTheme}>
