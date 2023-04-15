@@ -2,9 +2,10 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-import VerifiedName from "./VerifiedName";
-import SocialLinks from "../SocialLinks";
+import { VerticalSocialLinks } from "../SocialLinks";
 import Avatar from "../Avatar";
+
+import VerifiedName from "./VerifiedName";
 
 const HeadingStyled = styled.section`
   display: flex;
@@ -27,7 +28,7 @@ export const Heading: FC = () => {
       <p className="subtitle">
         Web developer who loves learning & building things in the process
       </p>
-      <SocialLinks />
+      <VerticalSocialLinks />
     </HeadingStyled>
   );
 };
