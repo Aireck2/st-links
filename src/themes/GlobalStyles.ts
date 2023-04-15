@@ -13,6 +13,6 @@ export const GlobalStyles = createGlobalStyle<{
      font-family: ${sora.style.fontFamily};
      background: ${({ theme }) => theme.colors.background};
      color: ${({ theme }) => theme.colors.white};
-     transition: all 0.50s linear; 
+     transition: all0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19),
   }
 `;
