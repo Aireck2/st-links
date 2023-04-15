@@ -1,24 +1,67 @@
 import Github from "@/components/basics/Github";
 import Linkedin from "@/components/basics/Linkedin";
 import Mail from "@/components/basics/Mail";
+import Discord from "@/components/basics/Discord";
+import StackOverflow from "@/components/basics/StackOverflow";
+import DevTo from "@/components/basics/DevTo";
+import DailyDev from "@/components/basics/DailyDev";
+import Keybase from "@/components/basics/Keybase";
 
 export const constants = {
   verified: "@erickescribaa",
   socialLinks: [
     {
       name: "github",
+      label: "Github",
       icon: Github,
       url: "https://github.com/aireck2",
     },
     {
       name: "linkedin",
+      label: "LinkedIn",
       icon: Linkedin,
       url: "https://www.linkedin.com/in/erickescriba/",
+      color: "#0077B5",
     },
     {
       name: "gmail",
+      label: "Gmail",
       icon: Mail,
       url: "mailto:erickescribaa@gmail.com",
+      color: "#EA4335",
+    },
+    {
+      name: "discord",
+      label: "Discord ᴇʀɪᴄᴋ#0817",
+      icon: Discord,
+      url: "https://discord.com/users/739854889760325662",
+      color: "rgb(86, 98, 246)",
+    },
+    {
+      name: "daily.dev",
+      label: "Daily.dev",
+      icon: DailyDev,
+      url: "https://app.daily.dev/aireck",
+    },
+    {
+      name: "stackoverflow",
+      label: "StackOverflow",
+      icon: StackOverflow,
+      url: "https://stackoverflow.com/users/21154383/erick-escriba-arango",
+      color: "rgb(232, 121, 33)",
+    },
+    {
+      name: "dev.to",
+      label: "Dev.to",
+      icon: DevTo,
+      url: "https://dev.to/aireck",
+    },
+    {
+      name: "keybase",
+      label: "Keybase",
+      icon: Keybase,
+      url: "https://keybase.io/erick2",
+      color: "#4285F4",
     },
   ],
   images: {
