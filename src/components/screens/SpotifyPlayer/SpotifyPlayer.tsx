@@ -34,14 +34,18 @@ const SpotifyPlayer: FC = () => {
               33vw"
       />
       <div className="container">
-        <Image
-          className="albumImage"
-          priority
-          src={data.albumImageUrl}
-          alt={`Album image: ${data.title}, ${data.artists} - ${data.album}`}
-          height={100}
-          width={100}
-        />
+        {data.playingType !== "episode" ? (
+          <Image
+            className="albumImage"
+            priority
+            src={data.albumImageUrl}
+            alt={`Album image: ${data.title}, ${data.artists} - ${data.album}`}
+            height={100}
+            width={100}
+          />
+        ) : (
+          "Playing podcast"
+        )}
         <div className="content">
           <h3 className="album-title">{caption}</h3>
           <h2

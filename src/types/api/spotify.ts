@@ -77,6 +77,7 @@ export type AdaptSpotifyData = {
   songUrl: string;
   duration: SpotifyProgress;
   progress: SpotifyProgress;
+  playingType: string;
 };
 
 export type SpotifyResponse = AdaptSpotifyData | { isPlaying: boolean };
