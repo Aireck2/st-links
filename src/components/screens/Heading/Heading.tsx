@@ -28,7 +28,6 @@ export const Heading: FC = () => {
       <p className="subtitle">
         Web developer who loves learning & building things in the process
       </p>
-      <VerticalSocialLinks />
     </HeadingStyled>
   );
 };
