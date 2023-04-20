@@ -1,15 +1,21 @@
 import { Switch } from "@/components/basics";
-import { SpotifyPlayer, Heading } from "@/components/screens";
+import {
+  SpotifyPlayer,
+  Heading,
+  VerticalSocialLinks,
+} from "@/components/screens";
 
 export const metadata = {
   title: "Erick Escriba | Links",
-  description: "Erick Escriba's social media & spotify player status",
+  description:
+    "Web developer who loves learning & building things in the process",
   viewport: "width=device-width, initial-scale=1",
   keywords: ["Erick", "Social media", "Links", "linkinbio"],
   authors: [{ name: "Erick Escriba", url: "https://erickescribaa.vercel.app" }],
   openGraph: {
     title: "Erick Escriba",
-    description: "Erick Escriba's social media & spotify player status",
+    description:
+      "Web developer who loves learning & building things in the process",
     url: "https://aireck-linkinbio.vercel.app",
     siteName: "Erick Escriba | Links",
     images: [
@@ -30,6 +36,7 @@ export default function Home() {
       <Switch />
       <Heading />
       <SpotifyPlayer />
+      <VerticalSocialLinks />
     </>
   );
 }
