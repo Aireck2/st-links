@@ -2,6 +2,7 @@ import { Children, FC, ReactNode } from "react";
 import styled from "styled-components";
 
 import { GlobalStyles } from "@/themes/GlobalStyles";
+import { Footer } from "./Footer";
 
 interface AppProps {
   children: JSX.Element | JSX.Element[] | ReactNode;
@@ -22,6 +23,7 @@ export const App: FC<AppProps> = ({ children }) => {
     <AppStyled>
       <GlobalStyles />
       {childrenLength > 1 ? <>{children}</> : children}
+      <Footer />
     </AppStyled>
   );
 };
