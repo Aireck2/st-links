@@ -2,7 +2,6 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-import { VerticalSocialLinks } from "../SocialLinks";
 import Avatar from "../Avatar";
 
 import VerifiedName from "./VerifiedName";
@@ -14,6 +13,7 @@ const HeadingStyled = styled.section`
   flex-direction: column;
   margin-bottom: 20px;
   padding: 2rem 1rem 0;
+  user-select: none;
   .subtitle {
     text-align: center;
     color: rgb(156 163 175);
