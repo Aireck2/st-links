@@ -25,9 +25,12 @@ export const ButtonStyled = styled.button<{ color?: string }>`
   border-radius: 8px;
   padding: 1rem 2rem;
   border: ${({ color, theme }) => `2px solid ${color ?? theme.colors.light}`};
+  cursor: pointer;
+  transition: 0.25s;
   &:hover {
-    cursor: pointer;
     transform: scale(1.05);
+    box-shadow: ${({ color, theme }) =>
+      `0 0.5em 0.5em -0.4em ${color ?? theme.colors.light}`};
   }
   a {
     all: unset;
