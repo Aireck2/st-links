@@ -1,7 +1,6 @@
 const lightTheme = {
   colors: {
-    background: "#d9d9d9",
-    // background: "#ffff",
+    background: "#f0f0f0",
     currentLine: "#44475a",
     foreground: "#f8f8f2",
     commnet: "#6272a4",

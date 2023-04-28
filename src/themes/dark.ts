@@ -1,7 +1,6 @@
 const darkTheme = {
   colors: {
-    // background: "#282a36",
-    background: "#121212",
+    background: "#020202",
     currentLine: "#44475a",
     foreground: "#f8f8f2",
     commnet: "#6272a4",
