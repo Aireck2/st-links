@@ -5,6 +5,7 @@ const borderRadius = "1rem";
 export const NotPlayingStyled = styled.section`
   display: flex;
   justify-content: center;
+  user-select: none;
   .icon {
     display: grid;
     place-items: center;
