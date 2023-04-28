@@ -1,11 +1,11 @@
 import { useGetGithub } from "@/hooks/useGetGithub";
 
-import { AvatarStyled, NotImage } from "./styles";
+import { AvatarContainerStyled, AvatarStyled, NotImage } from "./styles";
 
 const Avatar = () => {
   const { data } = useGetGithub();
   return (
-    <>
+    <AvatarContainerStyled>
       {data?.avatarUrl ? (
         <AvatarStyled
           priority
@@ -17,7 +17,7 @@ const Avatar = () => {
       ) : (
         <NotImage />
       )}
-    </>
+    </AvatarContainerStyled>
   );
 };
 export default Avatar;
