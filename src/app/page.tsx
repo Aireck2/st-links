@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "Web developer who loves learning & building things in the process",
   viewport: "width=device-width, initial-scale=1",
-  keywords: ["Erick", "Social media", "Links", "linkinbio"],
+  keywords: ["Erick", "Escriba", "Social media", "Links", "linkinbio"],
   authors: [{ name: "Erick Escriba", url: "https://erickescribaa.vercel.app" }],
   openGraph: {
     title: "Erick Escriba",
