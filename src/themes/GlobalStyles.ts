@@ -8,12 +8,14 @@ const sora = Sora({ subsets: ["latin"] });
 
 export const GlobalStyles = createGlobalStyle<{
   theme: DarkThemeType & LightThemeType;
+  isDark?: boolean;
 }>`
    body {
      font-family: ${sora.style.fontFamily};
-     background: ${({ theme }) => theme.colors.background};
+     background: ${({ isDark }) =>
+       `url(${isDark ? "/dark-bg.svg" : "/light-bg.svg"})`};
      color: ${({ theme }) => theme.colors.white};
-     transition: all 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+     transition: all 0.3s ease-in-out;
   }
 
   @media (orientation: landscape){
