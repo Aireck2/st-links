@@ -127,7 +127,7 @@ Project Link: [https://github.com/aireck2/st-links](https://github.com/aireck2/s
 [issues-shield]: https://img.shields.io/github/issues/aireck2/st-links.svg?style=for-the-badge
 [issues-url]: https://github.com/Aireck2/st-links/issues
 [license-shield]: https://img.shields.io/github/license/aireck2/st-links.svg?style=for-the-badge
-[license-url]: https://github.com/aireck2/links-next/blob/main/LICENSE
+[license-url]: https://github.com/Aireck2/st-links/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/erickescriba
 [product-screenshot]: images/screenshot.png
