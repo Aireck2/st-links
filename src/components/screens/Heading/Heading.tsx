@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Avatar from "../Avatar";
 
 import VerifiedName from "./VerifiedName";
+import { constants } from "@/config/constants";
 
 const HeadingStyled = styled.section`
   display: flex;
@@ -25,9 +26,7 @@ export const Heading: FC = () => {
     <HeadingStyled>
       <Avatar />
       <VerifiedName />
-      <p className="subtitle">
-        Web developer who loves learning & building things in the process
-      </p>
+      <p className="subtitle">{constants.caption}</p>
     </HeadingStyled>
   );
 };

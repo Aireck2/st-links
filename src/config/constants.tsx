@@ -9,6 +9,7 @@ import Keybase from "@/components/basics/Keybase";
 
 export const constants = {
   verified: "@erickescribaa",
+  caption: "Web developer who loves learning & building things in the process",
   socialLinks: [
     {
       name: "github",
