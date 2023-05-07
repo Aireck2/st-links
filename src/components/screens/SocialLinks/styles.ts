@@ -25,6 +25,7 @@ export const ButtonStyled = styled.button<{ color?: string }>`
   border-radius: 8px;
   padding: 1rem 2rem;
   border: ${({ color, theme }) => `2px solid ${color ?? theme.colors.light}`};
+  background: ${({ theme }) => `${theme.colors.background}`};
   cursor: pointer;
   transition: 0.25s;
   &:hover {
