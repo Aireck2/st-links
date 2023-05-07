@@ -14,7 +14,7 @@ export const AvatarStyled = styled(Image)`
 export const NotImage = styled.div`
   width: 120px;
   height: 120px;
-  background: #000;
+  background: ${(props) => props.theme.colors.background};
   border-radius: 50%;
 `;
 
@@ -22,22 +22,16 @@ export const AvatarContainerStyled = styled.div`
   border: none;
   outline: none;
   color: #fff;
-  background: #111;
   position: relative;
   z-index: 0;
   border-radius: 50%;
   &:before {
     content: "";
     background: linear-gradient(
-      45deg,
-      #ff0000,
-      #ff7300,
-      #fffb00,
-      #48ff00,
-      #00ffd5,
-      #002bff,
-      #7a00ff,
-      #ff00c8,
+      90deg,
+      #ea4335,
+      rgb(86, 98, 246),
+      rgb(232, 121, 33),
       #ff0000
     );
     position: absolute;
@@ -72,7 +66,6 @@ export const AvatarContainerStyled = styled.div`
     position: absolute;
     width: 120px;
     height: 120px;
-    background: #111;
     left: 0;
     top: 0;
     border-radius: 50%;
